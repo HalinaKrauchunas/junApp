@@ -27,10 +27,9 @@ CREATE TABLE jun_db.users_roles
     FOREIGN KEY (role_id) REFERENCES jun_db.roles (id)
 );
 
-
-insert into jun_db.roles (name)
-values ('ROLE_USER'),
-       ('ROLE_ADMIN');
+insert into jun_db.roles (id, name)
+values (1, 'ROLE_USER'),
+       (2, 'ROLE_ADMIN');
 
 insert into jun_db.users (username, password, email, locale, last_visit, active, activation_code)
 values ('admin', '$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i', 'user@gmail.com', 'Belarus',

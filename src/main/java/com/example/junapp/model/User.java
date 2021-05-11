@@ -1,6 +1,9 @@
 package com.example.junapp.model;
 
+import com.example.junapp.validation.CheckEmail;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,6 +14,8 @@ import java.util.HashSet;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -24,15 +29,16 @@ public class User {
     private String password;
 
     @NotBlank(message = "Поле не заполнено")
+    @CheckEmail
     private String email;
-
-    private boolean active;
 
     @Column(name = "activation_code", columnDefinition = "TEXT")
     private String activationCode;
 
     @Column(name = "last_visit")
     private LocalDateTime lastVisit;
+
+    private boolean active;
 
     private String locale;
 
