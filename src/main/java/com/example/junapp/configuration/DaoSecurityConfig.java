@@ -29,9 +29,14 @@ public class DaoSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/registration",
                         "/saveUser",
                         "/activate/{code}").permitAll()
-                .anyRequest().permitAll()
+//                Доступны всем
+                .antMatchers("/main/**").authenticated()
+//Доступны только тем, кто прошел аутентификацию
                 .and()
-                .formLogin().loginPage("/login").permitAll().successForwardUrl("/main");
+                .formLogin().loginPage("/login").permitAll().successForwardUrl("/")
+//                При успешной попытке входа перенаправляю в корень сайта
+                .and()
+                .csrf().disable();
     }
 
     @Bean

@@ -11,6 +11,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = com.example.junapp.validation.CheckEmailValidator.class)
 public @interface CheckEmail {
+
     String message() default "Email должен быть корректным адресом электронной почты";
 
     Class<?>[] groups() default {};

@@ -14,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Table(name = "roles")
 public class Role {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

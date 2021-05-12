@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru" class="html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>СЛЭ</title>
+    <link rel="icon" href="images/favicon2.ico" type="image/x-icon">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <nav class="nav_between">
+        <form th:action="@{/logout}" method="post">
+            <input class="btn" type="submit" value="Выйти"/>
+        </form>
+        <p th:text="'Добро пожаловать на сайт, '  + '!'"></p>
+    </nav>
+
+    <nav class="nav_main">
+    </nav>
+</header>
+
+<section class="s_section">
+</section>
+
+
+<footer class="footer">
+    <p>На данный момент сайт находится на стадии разработки :) </p>
+</footer>
+</body>
+</html>

@@ -42,6 +42,9 @@ public class User {
 
     private String locale;
 
+    @Column(name = "message_for_user")
+    private String messageForUser;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -54,4 +57,5 @@ public class User {
         }
         return roles;
     }
+
 }

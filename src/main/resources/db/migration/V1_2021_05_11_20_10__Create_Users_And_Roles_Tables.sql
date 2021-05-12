@@ -5,6 +5,7 @@ CREATE TABLE jun_db.users
     password        varchar(80),
     email           varchar(80),
     locale          varchar(80),
+    message_for_user varchar(256),
     last_visit      datetime,
     active          tinyint(1),
     activation_code text(256),
@@ -31,8 +32,9 @@ insert into jun_db.roles (id, name)
 values (1, 'ROLE_USER'),
        (2, 'ROLE_ADMIN');
 
-insert into jun_db.users (username, password, email, locale, last_visit, active, activation_code)
-values ('admin', '$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i', 'user@gmail.com', 'Belarus',
+insert into jun_db.users (username, password, email, locale, message_for_user, last_visit, active, activation_code)
+values ('admin', '$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i',
+        'user@gmail.com', 'Belarus', null,
         '2008-10-23 10:37:22', 1, null);
 
 insert into jun_db.users_roles (user_id, role_id)
